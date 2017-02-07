@@ -1,0 +1,115 @@
+//  Variables
+    =========================
+    These variables are used across the Sass files. You can change them here.
+    =========================
+
+// Fonts on the site (primary = main text, secondary = headlines / special)
+
+$font-primary: 'msr', sans-serif
+// $font-secondary: 'Georgia', serif
+
+// General colors
+
+$color-text: #222
+$color-bg: #2A2A2A
+$placeholder: #7A7A7A
+$black: #222
+$red: #e42441
+$soft-red: #ef4b64
+$brand: #FFDE00
+$light-grey: #EBEBEB
+
+// Width of the main text area
+
+$width-content: 1180px
+
+
+// Mixins
+
+$phone-sm: "(max-width: 320px)"
+$phone-md: "(min-width: 320px) and (max-width: 480px)"
+$tablet: "(min-width: 768px) and (max-width: 1023px)"
+$desktop: "(min-width: 1024px)"
+
+
+//  Imports
+    =========================
+    Import fonts and other Sass files.
+    =========================
+
+
+@font-face
+    font-family: 'msr'
+    src: url('../fonts/msrl-webfont.woff2') format('woff2'), url('../fonts/msrl-webfont.woff') format('woff'), url('../fonts/msrl-webfont.ttf') format('truetype'), url('../fonts/msrl-webfont.svg#montserratlight') format('svg')
+    font-weight: light
+    font-style: normal
+
+@font-face
+    font-family: 'msr'
+    src: url('../fonts/msrb-webfont.woff2') format('woff2'), url('../fonts/msrb-webfont.woff') format('woff'), url('../fonts/msrb-webfont.ttf') format('truetype'), url('../fonts/msrb-webfont.svg#montserratbold') format('svg')
+    font-weight: bold
+    font-style: normal
+
+@font-face
+    font-family: 'msr'
+    src: url('../fonts/msrr-webfont.woff2') format('woff2'), url('../fonts/msrr-webfont.woff') format('woff'), url('../fonts/msrr-webfont.ttf') format('truetype'), url('../fonts/msrr-webfont.svg#montserratregular') format('svg')
+    font-weight: normal
+    font-style: normal
+
+
+
+// Import files from this folder
+
+@import _mixins
+@import _reset
+@import '_normalize.css'
+// @import '_fluidable.scss'
+@import '_helper.css'
+@import components
+
+
+//  General Styles
+    =========================
+
+body
+    // background: $color-bg
+    background: white
+    color: $black
+    font-size: 14px
+    font-family: $font-primary
+
+.container
+    margin-left: auto
+    margin-right: auto
+    padding-left: 16px
+    padding-right: 16px
+    @media #{$phone-sm}
+        padding-left: 14px
+        padding-right: 14px
+
+.col-6
+    width: 50%
+    float: left
+
+.col-3
+    width: 33.33%
+    float: left
+
+.row
+    clear: both
+    margin-bottom: 14px
+    &:last-of-type
+        margin-bottom: 0
+
+a
+    color: $black
+
+
+
+
+
+.hero
+    min-height: 756px
+    background-image: url('../img/hero-image.jpg')
+    background-repeat: none
+    @include background-size(cover)
